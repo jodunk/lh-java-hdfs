@@ -18,7 +18,7 @@ lh-java-hdfs/
 
 ---
 
-### **🔥 Summary Client Side**
+### ** Summary Client Side**
 | **Step** | **Description** | **File(s)** |
 |----------|---------------|--------------|
 | ✅ Configure Hadoop Client | Enable Keytab-based authentication | `core-site.xml` |
@@ -44,11 +44,11 @@ mvn clean package
 java -Djava.security.auth.login.config=/etc/security/jaas.conf      -Djava.security.krb5.conf=/etc/security/krb5.conf      -jar target/hadoop-client-app-1.0-SNAPSHOT.jar
 ```
 
-✅ **Java authenticate with Kerberos and access HDFS without installing `krb5`! 🎯**
+✅ **Java authenticate with Kerberos and access HDFS without installing `krb5`! **
 
 ---
 
-### **🔥 Summary of EDF Configuration**
+### ** Summary of EDF Configuration**
 | **Step** | **Task** | **Command/File** |
 |----------|---------|------------------|
 | ✅ Verify Kerberos | Check if security is enabled | `maprcli cluster get | grep security` |
@@ -59,4 +59,4 @@ java -Djava.security.auth.login.config=/etc/security/jaas.conf      -Djava.secur
 | ✅ Configure HDFS | Set permissions for client | `hdfs dfs -chown client /user/client` |
 | ✅ Test Authentication | Verify Ticket & HDFS access | `klist`, `hdfs dfs -ls /user/client` |
 
-🚀 **EDF Kerberos authentication! The Java client can securely connect to HDFS using Keytab. 🎯**
+**EDF Kerberos authentication! The Java client can securely connect to HDFS using Keytab. **
