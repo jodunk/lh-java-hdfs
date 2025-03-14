@@ -35,7 +35,7 @@ java -Djava.security.auth.login.config=/etc/security/jaas.conf      -Djava.secur
 
 ---
 
-## **🔥 Summary of EDF Configuration**
+### **🔥 Summary of EDF Configuration**
 | **Step** | **Task** | **Command/File** |
 |----------|---------|------------------|
 | ✅ Verify Kerberos | Check if security is enabled | `maprcli cluster get | grep security` |
