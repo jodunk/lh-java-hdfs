@@ -32,13 +32,13 @@ lh-java-hdfs/
 ---
 
 ### Build and Run the Java Application**
-📌 **Build the project with Maven**
+ **Build the project with Maven**
 
 ```bash
 mvn clean package
 ```
 
-📌 **Run the Java application (no need for `krb5`)**
+ **Run the Java application (no need for `krb5`)**
 
 ```bash
 java -Djava.security.auth.login.config=/etc/security/jaas.conf      -Djava.security.krb5.conf=/etc/security/krb5.conf      -jar target/hadoop-client-app-1.0-SNAPSHOT.jar
