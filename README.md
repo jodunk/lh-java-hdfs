@@ -18,7 +18,7 @@ lh-java-hdfs/
 
 ---
 
-## Build and Run the Java Application**
+### Build and Run the Java Application**
 📌 **Build the project with Maven**
 
 ```bash
@@ -35,7 +35,21 @@ java -Djava.security.auth.login.config=/etc/security/jaas.conf      -Djava.secur
 
 ---
 
-## **🔥 Summary**
+## **🔥 Summary of EDF Configuration**
+| **Step** | **Task** | **Command/File** |
+|----------|---------|------------------|
+| ✅ Verify Kerberos | Check if security is enabled | `maprcli cluster get | grep security` |
+| ✅ Generate Keytab | Create client Keytab on KDC | `kadmin.local` |
+| ✅ Distribute Keytab | Copy Keytab to client | `scp client.keytab` |
+| ✅ Configure NameNode | Enable Kerberos in `core-site.xml` | Edit `/opt/mapr/hadoop/hadoop-2.x.x/etc/hadoop/core-site.xml` |
+| ✅ Restart NameNode | Apply changes | `maprcli node services -name namenode -action restart` |
+| ✅ Configure HDFS | Set permissions for client | `hdfs dfs -chown client /user/client` |
+| ✅ Test Authentication | Verify Ticket & HDFS access | `klist`, `hdfs dfs -ls /user/client` |
+
+🚀 **EDF is now configured for Kerberos authentication! The Java client can securely connect to HDFS using Keytab. 🎯**
+---
+
+### **🔥 Summary Client Side**
 | **Step** | **Description** | **File(s)** |
 |----------|---------------|--------------|
 | ✅ Configure Hadoop Client | Enable Keytab-based authentication | `core-site.xml` |
