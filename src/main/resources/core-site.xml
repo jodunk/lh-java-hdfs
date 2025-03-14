@@ -1,0 +1,26 @@
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://namenode:9000</value>
+    </property>
+
+    <property>
+        <name>hadoop.security.authentication</name>
+        <value>kerberos</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.kerberos.principal</name>
+        <value>hdfs/_HOST@REALM</value>
+    </property>
+
+    <property>
+        <name>hadoop.kerberos.keytab</name>
+        <value>/etc/security/keytabs/client.keytab</value>
+    </property>
+
+    <property>
+        <name>hadoop.kerberos.principal</name>
+        <value>client@REALM</value>
+    </property>
+</configuration>
